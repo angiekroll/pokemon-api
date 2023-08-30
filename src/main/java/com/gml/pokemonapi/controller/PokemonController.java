@@ -7,6 +7,11 @@ import com.gml.pokemonapi.constans.EndpointsResources;
 import com.gml.pokemonapi.exception.PokemonApiException;
 import com.gml.pokemonapi.dto.PokemonResponse;
 import com.gml.pokemonapi.service.impl.PokemonService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.constraints.Positive;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -32,6 +37,13 @@ public class PokemonController {
     this.pokemonService = pokemonService;
   }
 
+  @Operation(summary = "Get paginated pokemon list")
+  @ApiResponses(value = {
+      @ApiResponse(responseCode = "200", description = "Successful operation", content = {
+          @Content(mediaType = "application/json", schema = @Schema(implementation = PokemonResponse.class))
+      }),
+      @ApiResponse(responseCode = "503", description = "Internal server error", content = @Content)
+  })
 
   @GetMapping
   public ResponseEntity<PokemonResponse> getPokemon(
