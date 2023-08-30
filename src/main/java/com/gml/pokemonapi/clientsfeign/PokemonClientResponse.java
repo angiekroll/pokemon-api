@@ -1,9 +1,10 @@
 /**
  * Copyright 2023, Neoris. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.model;
+package com.gml.pokemonapi.clientsfeign;
 
-import com.innoqa.pokemonapi.dto.PokemonDto;
+import com.gml.pokemonapi.dto.Pokemon;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,6 +25,6 @@ public class PokemonClientResponse {
   private Number count;
   private String next;
   private String previous;
-  private Pokemon[] results;
+  private List<Pokemon> results;
 
 }

@@ -1,7 +1,7 @@
 /**
  * Copyright 2023, Neoris. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.dto;
+package com.gml.pokemonapi.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,9 +18,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PokemonDto {
+public class Paging {
 
-  private String name;
-  private String url;
+  private int page;
+  private int pageSize;
+  private int total;
+  private int totalPages;
 
 }

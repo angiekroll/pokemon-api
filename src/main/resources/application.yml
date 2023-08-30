@@ -1,0 +1,8 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /pokemon-api
+
+external-apis:
+  pokemon-api:
+    url: https://pokeapi.co/api/v2
