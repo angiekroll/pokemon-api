@@ -1,7 +1,7 @@
 /**
  * Copyright 2023, Neoris. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.dto;
+package com.gml.pokemonapi.dto;
 
 import java.time.Instant;
 import lombok.Builder;

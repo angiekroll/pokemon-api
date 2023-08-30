@@ -1,9 +1,9 @@
 /**
  * Copyright 2023, Neoris. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.exception;
+package com.gml.pokemonapi.exception;
 
-import com.innoqa.pokemonapi.dto.NotificationDTO;
+import com.gml.pokemonapi.dto.NotificationDTO;
 import java.time.Instant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

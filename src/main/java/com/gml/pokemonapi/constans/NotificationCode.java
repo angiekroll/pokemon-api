@@ -1,7 +1,7 @@
 /**
  * Copyright 2023, Neoris. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.constans;
+package com.gml.pokemonapi.constans;
 
 import org.springframework.http.HttpStatus;
 

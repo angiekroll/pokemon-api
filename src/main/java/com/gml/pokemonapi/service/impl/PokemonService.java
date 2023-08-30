@@ -1,10 +1,10 @@
 /**
  * Copyright 2023. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.service.impl;
+package com.gml.pokemonapi.service.impl;
 
-import com.innoqa.pokemonapi.dto.PokemonResponse;
-import com.innoqa.pokemonapi.exception.PokemonApiException;
+import com.gml.pokemonapi.exception.PokemonApiException;
+import com.gml.pokemonapi.dto.PokemonResponse;
 
 /**
  * @author angiekroll@gmail.com - Ángela Carolina Castillo Rodríguez.

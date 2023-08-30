@@ -1,16 +1,16 @@
 /**
  * Copyright 2023, Neoris. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.service;
+package com.gml.pokemonapi.service;
 
-import com.innoqa.pokemonapi.clientsfeign.PokemonClient;
-import com.innoqa.pokemonapi.constans.NotificationCode;
-import com.innoqa.pokemonapi.dto.Paging;
-import com.innoqa.pokemonapi.dto.Pokemon;
-import com.innoqa.pokemonapi.dto.PokemonResponse;
-import com.innoqa.pokemonapi.clientsfeign.PokemonClientResponse;
-import com.innoqa.pokemonapi.exception.PokemonApiException;
-import com.innoqa.pokemonapi.service.impl.PokemonService;
+import com.gml.pokemonapi.clientsfeign.PokemonClient;
+import com.gml.pokemonapi.constans.NotificationCode;
+import com.gml.pokemonapi.dto.Paging;
+import com.gml.pokemonapi.dto.Pokemon;
+import com.gml.pokemonapi.dto.PokemonResponse;
+import com.gml.pokemonapi.clientsfeign.PokemonClientResponse;
+import com.gml.pokemonapi.exception.PokemonApiException;
+import com.gml.pokemonapi.service.impl.PokemonService;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

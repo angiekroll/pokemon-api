@@ -1,12 +1,12 @@
 /**
  * Copyright 2023, Neoris. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.controller;
+package com.gml.pokemonapi.controller;
 
-import com.innoqa.pokemonapi.constans.EndpointsResources;
-import com.innoqa.pokemonapi.dto.PokemonResponse;
-import com.innoqa.pokemonapi.exception.PokemonApiException;
-import com.innoqa.pokemonapi.service.impl.PokemonService;
+import com.gml.pokemonapi.constans.EndpointsResources;
+import com.gml.pokemonapi.exception.PokemonApiException;
+import com.gml.pokemonapi.dto.PokemonResponse;
+import com.gml.pokemonapi.service.impl.PokemonService;
 import jakarta.validation.constraints.Positive;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;

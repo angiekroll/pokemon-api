@@ -1,9 +1,9 @@
 /**
  * Copyright 2023, Neoris. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.exception;
+package com.gml.pokemonapi.exception;
 
-import com.innoqa.pokemonapi.constans.NotificationCode;
+import com.gml.pokemonapi.constans.NotificationCode;
 import lombok.Getter;
 
 /**

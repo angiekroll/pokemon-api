@@ -1,8 +1,10 @@
 /**
  * Copyright 2023, Neoris. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.dto;
+package com.gml.pokemonapi.clientsfeign;
 
+import com.gml.pokemonapi.dto.Pokemon;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,11 +20,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Paging {
+public class PokemonClientResponse {
 
-  private int page;
-  private int pageSize;
-  private int total;
-  private int totalPages;
+  private Number count;
+  private String next;
+  private String previous;
+  private List<Pokemon> results;
 
 }
