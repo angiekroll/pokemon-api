@@ -3,7 +3,7 @@
  */
 package com.innoqa.pokemonapi.service.impl;
 
-import com.innoqa.pokemonapi.dto.PokemonDto;
+import com.innoqa.pokemonapi.dto.PokemonResponse;
 
 /**
  * @author angiekroll@gmail.com - Ángela Carolina Castillo Rodríguez.
@@ -12,7 +12,7 @@ import com.innoqa.pokemonapi.dto.PokemonDto;
  */
 public interface PokemonService {
 
-  PokemonDto getPokemons(int page, int pageSize);
+  PokemonResponse getPokemons(int page, int pageSize);
 
 
 }

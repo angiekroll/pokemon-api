@@ -3,9 +3,9 @@
  */
 package com.innoqa.pokemonapi.clientsfeign;
 
-import com.innoqa.pokemonapi.model.PokemonClientResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author angiekroll@gmail.com - Ángela Carolina Castillo Rodríguez.
@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface PokemonClient {
 
   @GetMapping("/pokemon")
-  PokemonClientResponse getPokemons();
+  PokemonClientResponse getPokemons(
+      @RequestParam("offset") int offset,
+      @RequestParam("limit") int limit);
 
 }

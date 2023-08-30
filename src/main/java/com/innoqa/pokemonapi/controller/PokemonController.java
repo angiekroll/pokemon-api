@@ -3,10 +3,9 @@
  */
 package com.innoqa.pokemonapi.controller;
 
-import com.innoqa.pokemonapi.dto.PokemonDto;
 import com.innoqa.pokemonapi.constans.EndpointsResources;
+import com.innoqa.pokemonapi.dto.PokemonResponse;
 import com.innoqa.pokemonapi.service.impl.PokemonService;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -34,9 +33,9 @@ public class PokemonController {
 
 
   @GetMapping
-  public ResponseEntity<PokemonDto> getPokemon(
-      @RequestParam(name = "page") @NotNull @Positive int page,
-      @RequestParam(name = "pageSize") @NotNull @Positive int pageSize) {
+  public ResponseEntity<PokemonResponse> getPokemon(
+      @RequestParam(name = "page", defaultValue = "1") @Positive int page,
+      @RequestParam(name = "pageSize", defaultValue = "20") @Positive int pageSize) {
     return ResponseEntity.ok(pokemonService.getPokemons(page, pageSize));
   }
 

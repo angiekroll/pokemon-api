@@ -1,8 +1,10 @@
 /**
  * Copyright 2023, Neoris. All rights reserved Date: 29/08/23
  */
-package com.innoqa.pokemonapi.dto;
+package com.innoqa.pokemonapi.clientsfeign;
 
+import com.innoqa.pokemonapi.dto.Pokemon;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,9 +20,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PokemonDto {
+public class PokemonClientResponse {
 
-  private String name;
-  private String url;
+  private Number count;
+  private String next;
+  private String previous;
+  private List<Pokemon> results;
 
 }
