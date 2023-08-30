@@ -4,6 +4,7 @@
 package com.innoqa.pokemonapi.clientsfeign;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -13,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @since - 1.0.0
  */
 
-@FeignClient(name = "pokemon-api", url = "https://pokeapi.co/api/v2")
+@FeignClient(name = "pokemon-api", url = "${external-apis.pokemon-api.url}")
 public interface PokemonClient {
 
   @GetMapping("/pokemon")
-  PokemonClientResponse getPokemons(
+  ResponseEntity<PokemonClientResponse> getPokemons(
       @RequestParam("offset") int offset,
       @RequestParam("limit") int limit);
 

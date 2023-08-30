@@ -4,6 +4,7 @@
 package com.innoqa.pokemonapi.service.impl;
 
 import com.innoqa.pokemonapi.dto.PokemonResponse;
+import com.innoqa.pokemonapi.exception.PokemonApiException;
 
 /**
  * @author angiekroll@gmail.com - Ángela Carolina Castillo Rodríguez.
@@ -12,7 +13,7 @@ import com.innoqa.pokemonapi.dto.PokemonResponse;
  */
 public interface PokemonService {
 
-  PokemonResponse getPokemons(int page, int pageSize);
+  PokemonResponse getPokemons(int page, int pageSize) throws PokemonApiException;
 
 
 }

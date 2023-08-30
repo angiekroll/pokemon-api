@@ -4,13 +4,17 @@
 package com.innoqa.pokemonapi.service;
 
 import com.innoqa.pokemonapi.clientsfeign.PokemonClient;
+import com.innoqa.pokemonapi.constans.NotificationCode;
 import com.innoqa.pokemonapi.dto.Paging;
 import com.innoqa.pokemonapi.dto.Pokemon;
 import com.innoqa.pokemonapi.dto.PokemonResponse;
 import com.innoqa.pokemonapi.clientsfeign.PokemonClientResponse;
+import com.innoqa.pokemonapi.exception.PokemonApiException;
 import com.innoqa.pokemonapi.service.impl.PokemonService;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 /**
@@ -30,14 +34,16 @@ public class PokemonServiceImpl implements PokemonService {
   }
 
   @Override
-  public PokemonResponse getPokemons(int page, int pageSize) {
+  public PokemonResponse getPokemons(int page, int pageSize) throws PokemonApiException {
 
     int offset = (page - 1) * pageSize;
 
-    PokemonClientResponse pokemonClientResponse = pokemonClient.getPokemons(offset, pageSize);
+    ResponseEntity<PokemonClientResponse> response = pokemonClient.getPokemons(offset, pageSize);
 
-    List<Pokemon> pokemons = pokemonClientResponse.getResults();
-    int totalPokemons = (int) pokemonClientResponse.getCount();
+    validateResponse(response);
+
+    List<Pokemon> pokemons = response.getBody().getResults();
+    int totalPokemons = (int) response.getBody().getCount();
     int totalPages = (int) Math.ceil((double) totalPokemons / pageSize);
 
     return PokemonResponse.builder()
@@ -49,6 +55,13 @@ public class PokemonServiceImpl implements PokemonService {
             .total(totalPokemons)
             .build())
         .build();
+  }
+
+  private void validateResponse(ResponseEntity<?> response) throws PokemonApiException {
+    if (response.getStatusCode() != HttpStatus.OK) {
+      log.error("Error getting pokemons from external API");
+      throw new PokemonApiException(NotificationCode.ERROR_GETTING_EXTERNAL_SERVICE);
+    }
   }
 
 }

@@ -5,6 +5,7 @@ package com.innoqa.pokemonapi.controller;
 
 import com.innoqa.pokemonapi.constans.EndpointsResources;
 import com.innoqa.pokemonapi.dto.PokemonResponse;
+import com.innoqa.pokemonapi.exception.PokemonApiException;
 import com.innoqa.pokemonapi.service.impl.PokemonService;
 import jakarta.validation.constraints.Positive;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,8 @@ public class PokemonController {
   @GetMapping
   public ResponseEntity<PokemonResponse> getPokemon(
       @RequestParam(name = "page", defaultValue = "1") @Positive int page,
-      @RequestParam(name = "pageSize", defaultValue = "20") @Positive int pageSize) {
+      @RequestParam(name = "pageSize", defaultValue = "20") @Positive int pageSize)
+      throws PokemonApiException {
     return ResponseEntity.ok(pokemonService.getPokemons(page, pageSize));
   }
 

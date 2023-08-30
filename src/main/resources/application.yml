@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+external-apis:
+  pokemon-api:
+    url: https://pokeapi.co/api/v2
