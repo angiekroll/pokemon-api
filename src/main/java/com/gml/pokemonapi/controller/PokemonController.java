@@ -31,13 +31,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 public class PokemonController {
 
-  private PokemonService pokemonService;
+  private final PokemonService pokemonService;
 
   public PokemonController(PokemonService pokemonService) {
     this.pokemonService = pokemonService;
   }
 
-  @Operation(summary = "Get paginated pokemon list")
+  @Operation(summary = "Get a list of paginated pokemon from an external service get")
   @ApiResponses(value = {
       @ApiResponse(responseCode = "200", description = "Successful operation", content = {
           @Content(mediaType = "application/json", schema = @Schema(implementation = PokemonResponse.class))
@@ -51,6 +51,14 @@ public class PokemonController {
       @RequestParam(name = "pageSize", defaultValue = "20") @Positive int pageSize)
       throws PokemonApiException {
     return ResponseEntity.ok(pokemonService.getPokemons(page, pageSize));
+  }
+
+  @GetMapping("/pokemons-db")
+  public ResponseEntity<PokemonResponse> getPokemonFromDataBase(
+      @RequestParam(name = "page", defaultValue = "1") @Positive int page,
+      @RequestParam(name = "pageSize", defaultValue = "20") @Positive int pageSize)
+      throws PokemonApiException {
+    return ResponseEntity.ok(pokemonService.getPokemonsDb(page, pageSize));
   }
 
 }

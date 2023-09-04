@@ -21,8 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PokemonResponse {
 
-  private List<Pokemon> pokemons;
+  private List<PokemonDto> pokemonDtos;
   private Paging paging;
-
 
 }
