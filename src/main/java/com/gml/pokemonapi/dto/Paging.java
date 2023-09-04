@@ -22,7 +22,7 @@ public class Paging {
 
   private int page;
   private int pageSize;
-  private int total;
+  private Long total;
   private int totalPages;
 
 }

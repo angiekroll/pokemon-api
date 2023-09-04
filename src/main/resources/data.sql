@@ -1,0 +1,21 @@
+
+INSERT INTO POKEMON (NAME, URL) VALUES ('bulbasaur','https://pokeapi.co/api/v2/pokemon/1/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('ivysaur','https://pokeapi.co/api/v2/pokemon/2/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('venusaur','https://pokeapi.co/api/v2/pokemon/3/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('charmander','https://pokeapi.co/api/v2/pokemon/4/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('charmeleon','https://pokeapi.co/api/v2/pokemon/5/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('charizard','https://pokeapi.co/api/v2/pokemon/6/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('squirtle','https://pokeapi.co/api/v2/pokemon/7/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('wartortle','https://pokeapi.co/api/v2/pokemon/8/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('blastoise','https://pokeapi.co/api/v2/pokemon/9/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('caterpie','https://pokeapi.co/api/v2/pokemon/10/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('metapod','https://pokeapi.co/api/v2/pokemon/11/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('butterfree','https://pokeapi.co/api/v2/pokemon/12/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('weedle','https://pokeapi.co/api/v2/pokemon/13/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('kakuna','https://pokeapi.co/api/v2/pokemon/14/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('beedrill','https://pokeapi.co/api/v2/pokemon/15/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('pidgey','https://pokeapi.co/api/v2/pokemon/16/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('pidgeotto','https://pokeapi.co/api/v2/pokemon/17/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('pidgeot','https://pokeapi.co/api/v2/pokemon/18/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('rattata','https://pokeapi.co/api/v2/pokemon/19/');
+INSERT INTO POKEMON (NAME, URL) VALUES ('raticate','https://pokeapi.co/api/v2/pokemon/20/');

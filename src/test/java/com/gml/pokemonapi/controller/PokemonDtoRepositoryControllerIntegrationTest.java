@@ -9,7 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.gml.pokemonapi.clientsfeign.PokemonClient;
 import com.gml.pokemonapi.clientsfeign.PokemonClientResponse;
-import com.gml.pokemonapi.dto.Pokemon;
+import com.gml.pokemonapi.dto.PokemonDto;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -30,7 +30,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class PokemonControllerIntegrationTest {
+class PokemonDtoRepositoryControllerIntegrationTest {
 
   @Autowired
   private MockMvc mockMvc;
@@ -50,16 +50,16 @@ class PokemonControllerIntegrationTest {
 
         .andExpect(status().isOk())
 
-        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemons[0].name").value("bulbasaur"))
-        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemons[0].url")
+        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemonDtos[0].name").value("bulbasaur"))
+        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemonDtos[0].url")
             .value("https://pokeapi.co/api/v2/pokemon/1/"))
 
-        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemons[1].name").value("ivysaur"))
-        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemons[1].url")
+        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemonDtos[1].name").value("ivysaur"))
+        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemonDtos[1].url")
             .value("https://pokeapi.co/api/v2/pokemon/2/"))
 
-        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemons[2].name").value("venusaur"))
-        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemons[2].url")
+        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemonDtos[2].name").value("venusaur"))
+        .andExpect(MockMvcResultMatchers.jsonPath("$.pokemonDtos[2].url")
             .value("https://pokeapi.co/api/v2/pokemon/3/"))
 
         .andExpect(MockMvcResultMatchers.jsonPath("$.paging.page").value(1))
@@ -70,18 +70,18 @@ class PokemonControllerIntegrationTest {
 
   ResponseEntity<PokemonClientResponse> buildPokemonResponse() {
 
-    List<Pokemon> pokemons = new ArrayList<>();
-    pokemons.add(Pokemon.builder()
+    List<PokemonDto> pokemonDtos = new ArrayList<>();
+    pokemonDtos.add(PokemonDto.builder()
         .name("bulbasaur")
         .url("https://pokeapi.co/api/v2/pokemon/1/")
         .build());
 
-    pokemons.add(Pokemon.builder()
+    pokemonDtos.add(PokemonDto.builder()
         .name("ivysaur")
         .url("https://pokeapi.co/api/v2/pokemon/2/")
         .build());
 
-    pokemons.add(Pokemon.builder()
+    pokemonDtos.add(PokemonDto.builder()
         .name("venusaur")
         .url("https://pokeapi.co/api/v2/pokemon/3/")
         .build());
@@ -89,7 +89,7 @@ class PokemonControllerIntegrationTest {
     return ResponseEntity.ok(PokemonClientResponse.builder().count(1281)
         .next("https://pokeapi.co/api/v2/pokemon?offset=0&limit=3")
         .previous(null)
-        .results(pokemons)
+        .results(pokemonDtos)
         .build());
   }
 

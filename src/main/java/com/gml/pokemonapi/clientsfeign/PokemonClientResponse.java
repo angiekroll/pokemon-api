@@ -3,7 +3,7 @@
  */
 package com.gml.pokemonapi.clientsfeign;
 
-import com.gml.pokemonapi.dto.Pokemon;
+import com.gml.pokemonapi.dto.PokemonDto;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +25,6 @@ public class PokemonClientResponse {
   private Number count;
   private String next;
   private String previous;
-  private List<Pokemon> results;
+  private List<PokemonDto> results;
 
 }

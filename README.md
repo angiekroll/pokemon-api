@@ -1,6 +1,6 @@
 ## Pockemon Api
 
-This project consumes an external api to obtain a list of pokemons and returns the paginated
+This project consumes an external api to obtain a list of pokemonDtos and returns the paginated
 information.
 
 ### Features.
@@ -19,7 +19,7 @@ Response success: Http-Code: 200
 
 ```json
 {
-  "pokemons": [
+  "pokemonDtos": [
     {
       "name": "bulbasaur",
       "url": "https://pokeapi.co/api/v2/pokemon/1/"
